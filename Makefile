@@ -1,3 +1,3 @@
 .PHONY: git
 git:
-	git add . && git commit -m "solve" && git push
+	git add ./solutions && git commit -m "solve" && git push
