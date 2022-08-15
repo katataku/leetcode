@@ -7,7 +7,8 @@
 // @lc code=start
 class Solution {
 public:
-  struct UnionFind {
+  class UnionFind {
+  public:
     vector<int> par; // par[i]:iの親の番号　(例) par[3] = 2 : 3の親が2
 
     UnionFind(int N) : par(N) { //最初は全てが根であるとして初期化
