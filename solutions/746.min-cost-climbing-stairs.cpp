@@ -7,7 +7,7 @@
 // @lc code=start
 class Solution {
 public:
-  map<int, int> m;
+  unordered_map<int, int> m;
   int calc(int n, vector<int> &cost) {
     if (m.find(n) != m.end())
       return m[n];
@@ -20,6 +20,8 @@ public:
   }
 
   int minCostClimbingStairs(vector<int> &cost) {
+    for (int i = 0; i < cost.size() / 2; i++)
+      calc(i, cost);
     return calc(cost.size(), cost);
   }
 };
