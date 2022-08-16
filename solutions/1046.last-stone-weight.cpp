@@ -9,7 +9,6 @@ class Solution {
 public:
   int lastStoneWeight(vector<int> &stones) {
     while (true) {
-
       int n = stones.size();
       if (n == 0)
         return 0;
