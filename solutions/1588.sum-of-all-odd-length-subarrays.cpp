@@ -1,0 +1,19 @@
+/*
+ * @lc app=leetcode id=1588 lang=cpp
+ *
+ * [1588] Sum of All Odd Length Subarrays
+ */
+
+// @lc code=start
+class Solution {
+public:
+  int sumOddLengthSubarrays(vector<int> &arr) {
+    int ans = 0, n = arr.size(), i;
+    for (i = 0; i < n; i++) {
+      int contribution = ceil((i + 1) * (n - i) / 2.0);
+      ans += (contribution * arr[i]);
+    }
+    return ans;
+  }
+};
+// @lc code=end

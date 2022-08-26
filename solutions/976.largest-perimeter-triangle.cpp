@@ -8,23 +8,13 @@
 class Solution {
 public:
   int largestPerimeter(vector<int> &nums) {
+    int n = nums.size();
     int ans = 0;
-    for (int i = 0; i < nums.size() - 3; i++) {
-      int a = nums[i];
-      int b = nums[i + 1];
-      int c = nums[i + 2];
-      if (c > b) {
-        int tmp = c;
-        c = b;
-        b = tmp;
+    sort(nums.begin(), nums.end());
+    for (int i = 0; i < n - 2; i++) {
+      if (nums[i] + nums[i + 1] > nums[i + 2]) {
+        ans = max(ans, nums[i] + nums[i + 1] + nums[i + 2]);
       }
-      if (b > a) {
-        int tmp = b;
-        b = a;
-        b = tmp;
-      }
-      if (a < b + c)
-        ans = max(ans, a + b + c);
     }
     return ans;
   }
